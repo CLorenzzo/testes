@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp</title>
+    <style>
+        body{
+            text-align: center;
+            background: black;
+            color: white;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body id="body">
+    <h1 id="title">It's a lamp!</h1>
+    <img id="lamp" src="https://arduinolivre.files.wordpress.com/2013/08/lampada_desligada.png"><br>
+   
+    <input type="button" value="Acender" onclick="lighton()">
+    <input type="button" value="Desligar" onclick="lightoff()">
+
+<script>
+    var lampon = "https://arduinolivre.files.wordpress.com/2013/08/lampada_ligada.png"
+    function lighton(){
+        var title = document.getElementById("title")
+        var body = document.getElementById("body")
+        var lamp = document.getElementById("lamp").src = lampon
+        title.innerHTML = "It's on!"
+        body.style.background = "white"
+        body.style.color = "black"
+    }
+    function lightoff(){
+        var title = document.getElementById("title")
+        var body = document.getElementById("body")
+        var lamp = document.getElementById("lamp").src = "https://arduinolivre.files.wordpress.com/2013/08/lampada_desligada.png"
+        title.innerHTML = "It's a lamp!"
+        body.style.background = "black"
+        body.style.color = "White"
+    }
+</script>
+</body>
+</html>

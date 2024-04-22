@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media calculator 2</title>
+    <style>
+        body{
+           font: normal 20pt Arial;
+           background-color: crimson;
+           color: white;
+           text-align: center;
+        }
+        h1{
+           background-color: white;
+           color: crimson;
+        }
+        input{
+          width: 300px;
+          height: 25px;
+          border: 0px;
+        }
+        div{
+          margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong>CALCULE SUA MÉDIA</strong></h1><br>
+    
+    <p>Digite abaixo suas notas</p>
+
+    <input type="number" name="fstmed" id="fstmed"><br>
+    <input type="number" name="scndmed" id="scndmed"><br>
+    <input type="number" name="trdmed" id="trdmed"><br>
+    <input type="number" name="fthmed" id="fthmed"><br>
+
+    <input type="button" value="Calcular média" onclick="calculate()"><br>
+
+    <div id="result"><strong>resultado aqui</strong></div>
+
+    <script>
+        function calculate(){
+          var fstmed = window.document.querySelector('input#fstmed')
+          var scndmed = window.document.querySelector('input#scndmed')
+          var trdmed = window.document.querySelector('input#trdmed')
+          var fthmed = window.document.querySelector('input#fthmed')
+        //Vars that difines whos is a number
+          var fvalue = Number(fstmed.value)
+          var svalue = Number(scndmed.value)
+          var tvalue = Number(trdmed.value)
+          var frthvalue = Number(fthmed.value)
+        //Results
+          var calc = (fvalue + svalue + tvalue + frthvalue)/4
+          var pass = 6 - calc
+        //end
+        result.innerHTML = calc >= 6 ? `Você passou! Com média igual a ${calc.toFixed(1)}` : `Você não passou... a média é 6 e você teve média ${calc.toFixed(1)}. Você precisa de ${pass.toFixed(1)} pontos pra passar.`
+        }
+    </script>
+    <body>
+</html>

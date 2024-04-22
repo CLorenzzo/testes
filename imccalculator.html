@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imc Calculator</title>
+    <style>
+        body{
+        font: normal 20pt Arial;
+        text-align: center;
+        background: orangered;
+        }
+        h1{
+            background: white;
+        }
+        input{
+        border: 0px;
+        }
+        div{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <H1>Calcule seu IMC!</H1>
+    
+    <input type="number" name="weight" id="weight" placeholder="Peso"><br>
+    <input type="number" name="height" id="height" placeholder="Altura"><br>
+
+    <input type="button" value="calcular" onclick="calc()">
+
+    <div id="imc">Resultado</div>
+
+    <script>
+        function calc(){
+            var res = document.getElementById("imc")
+            var weight = document.getElementById("weight")
+            var height = document.getElementById("height")
+            //change to number
+            var w = Number.parseFloat(weight.value)
+            var h = Number.parseFloat(height.value)
+            //calcule
+            var calcule = w/(h * h)
+            //condições
+            if(calcule < 16.9){
+           var imc = "Muito abaixo do peso"
+            }
+            else if(calcule > 17 && calcule < 18.4){
+           var imc = "Abaixo do peso"
+            }
+            else if(calcule > 18.5 && calcule < 24.9){
+           var imc = "Peso Normal"
+            }
+            else if(calcule > 25 && calcule < 29.9){
+           var imc = "Acima do peso"
+            }
+            else if(calcule > 30 && calcule < 34.9){
+           var imc = "Obesidade grau I"
+            }
+            else if(calcule > 35 && calcule < 40){
+           var imc = "Obesidade grau II"
+            }
+            else if(calcule > 40){
+           var imc = "Obesidade grave"
+            }
+           res.innerHTML = `Seu IMC é ${calcule.toFixed(1)}, o que indica: ${imc}`
+        }
+    </script>
+</body>
+</html> 
